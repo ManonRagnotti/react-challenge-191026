@@ -60,11 +60,7 @@ export default class StudentList extends Component {
         return(
             <div className="container">
               {this.testPostRequest()}
-                <ul>
-                  <li>
-                    <StudentInfos data={this.state.data}/>
-                  </li>
-                </ul>
+              <StudentInfos data={this.state.data}/>
             </div>
         );
     }
