@@ -1,11 +1,29 @@
 import React, { Component } from 'react';
 
-const StudentInfos = ({firstname, lastname, email, desc, skills}) => {
-  return (
-    <div>
-      <p>{firstname}</p>
-    </div>
-  )
-}
+export default class StudentInfos extends Component {
+  constructor(props){
+    super();
+  }
 
-export default StudentInfos;
+  componentDidMount(){
+
+  }
+  render(){
+   // if( this.props.list ) console.log(Object.entries(this.props.list))
+    return (
+      <div>
+        {
+          this.props.data &&
+          this.props.data.map
+          (
+            student => <p>{ student.firstname }</p>
+          )
+        }
+      </div>
+    )
+  }
+
+}
+ 
+
+

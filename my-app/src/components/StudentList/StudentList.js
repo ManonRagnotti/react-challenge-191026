@@ -7,6 +7,7 @@ export default class StudentList extends Component {
         super();
         this.testGetRequest = this.testGetRequest.bind(this);
         this.testPostRequest = this.testPostRequest.bind(this);
+        this.state = {data: null}
     }
 
 
@@ -24,15 +25,18 @@ export default class StudentList extends Component {
                 'ContentType': 'text/plain'
             }
         }).then(res => res.json())
-        .then(data => console.log(data));
+
+        .then(data => Object.entries(data).map( d => d[1] )  )
+        .then(students => this.setState({data:students}, ()=>console.log(this.state.data)))
+        //.then(console.log(this.state.data));
     }
 
     testPostRequest(){
         const data = {
-            "desc": "etudiant epitech",
+            "desc": "etudiant hetic",
             "email": "test@test.com",
-            "lastname": "albanel",
-            "firstname": "nicolas",
+            "lastname": "manon",
+            "firstname": "ragnotti",
             "skills": {
                 "back": "A",
                 "front": "A",
@@ -58,7 +62,7 @@ export default class StudentList extends Component {
               {this.testPostRequest()}
                 <ul>
                   <li>
-                    <StudentInfos />
+                    <StudentInfos data={this.state.data}/>
                   </li>
                 </ul>
             </div>
