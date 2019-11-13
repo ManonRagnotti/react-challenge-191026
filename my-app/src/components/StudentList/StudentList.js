@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import StudentInfos from '../StudentInfos/StudentInfos'
 
 export default class StudentList extends Component {
 
@@ -39,7 +40,7 @@ export default class StudentList extends Component {
                 "ui": "A",
                 "ux": "A"
             }
-        } 
+        }
         fetch('https://react-challenge-9e33c.firebaseio.com/users.json',{
             method: 'POST',
             headers: {
@@ -53,11 +54,15 @@ export default class StudentList extends Component {
 
     render(){
         return(
-            <div>
-                <h1>Hello world</h1>
+            <div className="container">
+              {this.testPostRequest()}
+                <ul>
+                  <li>
+                    <StudentInfos />
+                  </li>
+                </ul>
             </div>
         );
     }
 
 }
-
