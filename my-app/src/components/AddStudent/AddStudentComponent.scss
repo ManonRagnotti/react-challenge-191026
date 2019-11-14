@@ -1,0 +1,61 @@
+.container_list::after {
+  content: "";
+  width: 85%;
+  display: block;
+  height: 1px;
+  background-color: #D5D5D5;
+  margin: 0 auto;
+}
+
+.studentForm {
+  form {
+    width: 90%;
+    margin: 0 auto;
+    .row {
+      margin: 40px 0 0 0;
+      input {
+        // width: 50%;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid black;
+      }
+      textarea {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid black;
+      }
+      .list-skills {
+        display: flex;
+        justify-content: space-between;
+        label {
+          font-weight: bold;
+          &.red {
+            color: #EF6F6C;
+          }
+          &.yellow {
+            color: #ECD070;
+          }
+          &.blue {
+            color: #487D92;
+          }
+          &.mint {
+            color: #70D3C1;
+          }
+          &.purple {
+            color: #BB77C0;
+          }
+        }
+      }
+    }
+    .btn {
+      background-color: #656D79;
+      border: none;
+      margin-top: 40px;
+      &:hover {
+        background-color: #45D492;
+      }
+    }
+  }
+}

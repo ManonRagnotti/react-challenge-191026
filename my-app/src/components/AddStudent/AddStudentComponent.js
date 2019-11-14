@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './AddStudentComponent.css';
+import './AddStudentComponent.scss';
 import { Form, Row, Col, Container, Button } from 'react-bootstrap';
 
 export default class StudentInfos extends Component {
@@ -50,7 +50,7 @@ export default class StudentInfos extends Component {
   handleChangeUi = (e) => {
     this.state.studentInfo.skills.ui = e.target.value
   }
-  
+
 
 
   onSubmit = (e) => {
@@ -67,117 +67,132 @@ export default class StudentInfos extends Component {
             body: JSON.stringify(this.state.studentInfo)
         }).then(res => res.json())
         .then(data => console.log(data));
-  } 
+  }
 
   render(){
     return (
       <div className="studentForm">
-      <Container>
-        <Form>
-          <Row>
-            <Col>
-              <Form.Label >First Name</Form.Label>
-              <Form.Control 
-                placeholder="First name"
-                onChange={this.handleChangeFirstname}
-                name={this.state.studentInfo.firstname}/>
-            </Col>
-            <Col>
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control 
-                placeholder="Last name"
-                onChange={this.handleChangeLastname}
-                name={this.state.studentInfo.lastname} />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Form.Label>Email address</Form.Label>  
-              <Form.Control 
-                type="email"
-                placeholder="email"
-                onChange={this.handleChangeEmail}
-                name={this.state.studentInfo.email} />
-            </Col>
-            <Col>
-              <Form.Label>Description</Form.Label>
-              <Form.Control
-                as="textarea" 
-                rows="3" 
-                placeholder="Description"
-                onChange={this.handleChangeDesc}
-                name={this.state.studentInfo.desc} />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Form.Label>Back</Form.Label>
-              <Form.Control
-                as="select"
-                onChange={this.handleChangeBack}
-                name={this.state.studentInfo.skills.back} >
-                <option>Select</option>
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
-                <option>D</option>
-                <option>E</option>
-              </Form.Control>
-              <Form.Label>Front</Form.Label>
-              <Form.Control
-              as="select"
-              onChange={this.handleChangeFront}
-              name={this.state.studentInfo.skills.front} >
-                <option>Select</option>
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
-                <option>D</option>
-                <option>E</option>
-              </Form.Control>
-              <Form.Label>Gestion de Projet</Form.Label>
-              <Form.Control
-              as="select" 
-              onChange={this.handleChangeProj}
-              name={this.state.studentInfo.skills.project_mngmt}>
-                <option>Select</option>
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
-                <option>D</option>
-                <option>E</option>
-              </Form.Control>
-              <Form.Label>UX</Form.Label>
-              <Form.Control
-              as="select"
-              onChange={this.handleChangeUx}
-              name={this.state.studentInfo.skills.ux} >
-                <option>Select</option>
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
-                <option>D</option>
-                <option>E</option>
-              </Form.Control>
-              <Form.Label>UI</Form.Label>
-              <Form.Control
-              as="select"
-              onChange={this.handleChangeUi}
-              name={this.state.studentInfo.skills.ui} >
-                <option>Select</option>
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
-                <option>D</option>
-                <option>E</option>
-              </Form.Control>
-            </Col>
-          </Row>
-          <Button variant="primary" type="submit" onClick={this.onSubmit}>
-            Submit
-          </Button>
-        </Form>
-      </Container>
+        <Container>
+          <div className="list-header">
+            <h3>Ajouter un étudiant</h3>
+          </div>
+          <Form>
+            <Row className="first-row">
+              <Col>
+                {/* <Form.Label >First Name</Form.Label> */}
+                <Form.Control
+                  placeholder="Firstname"
+                  onChange={this.handleChangeFirstname}
+                  name={this.state.studentInfo.firstname}/>
+              </Col>
+              <Col>
+                {/* <Form.Label>Last Name</Form.Label> */}
+                <Form.Control
+                  placeholder="Lastname"
+                  onChange={this.handleChangeLastname}
+                  name={this.state.studentInfo.lastname} />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                {/* <Form.Label>Email address</Form.Label> */}
+                <Form.Control
+                  type="email"
+                  placeholder="Email"
+                  onChange={this.handleChangeEmail}
+                  name={this.state.studentInfo.email} />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                {/* <Form.Label>Description</Form.Label> */}
+                <Form.Control
+                  as="textarea"
+                  rows="3"
+                  placeholder="Description"
+                  onChange={this.handleChangeDesc}
+                  name={this.state.studentInfo.desc} />
+              </Col>
+            </Row>
+            <Row>
+              <Col className="list-skills">
+                <div className="skills">
+                  <Form.Label className="red">Back</Form.Label>
+                  <Form.Control
+                    as="select"
+                    onChange={this.handleChangeBack}
+                    name={this.state.studentInfo.skills.back} >
+                    <option>Select</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                  </Form.Control>
+                </div>
+                <div className="skills">
+                  <Form.Label className="yellow">Front</Form.Label>
+                  <Form.Control
+                    as="select"
+                    onChange={this.handleChangeFront}
+                    name={this.state.studentInfo.skills.front} >
+                    <option>Select</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                  </Form.Control>
+                </div>
+                <div className="skills">
+                  <Form.Label className="blue">UX</Form.Label>
+                  <Form.Control
+                    as="select"
+                    onChange={this.handleChangeUx}
+                    name={this.state.studentInfo.skills.ux} >
+                    <option>Select</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                  </Form.Control>
+                </div>
+                <div className="skills">
+                  <Form.Label className="mint">UI</Form.Label>
+                  <Form.Control
+                    as="select"
+                    onChange={this.handleChangeUi}
+                    name={this.state.studentInfo.skills.ui} >
+                    <option>Select</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                  </Form.Control>
+                </div>
+                <div className="skills">
+                  <Form.Label className="purple">Gestion de Projet</Form.Label>
+                  <Form.Control
+                    as="select"
+                    onChange={this.handleChangeProj}
+                    name={this.state.studentInfo.skills.project_mngmt}>
+                    <option>Select</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                  </Form.Control>
+                </div>
+              </Col>
+            </Row>
+            <Button variant="primary" type="submit" onClick={this.onSubmit}>
+              Submit
+            </Button>
+          </Form>
+        </Container>
       </div>
     )
   }

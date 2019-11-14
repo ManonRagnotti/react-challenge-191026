@@ -2,7 +2,7 @@
 * Container
 **/
 .container {
-  margin: 5%;
+  margin: 5% 5% 0 5%;
   padding: 3%;
   background: #FFFFFF;
 }
@@ -47,13 +47,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     padding: 0 30px;
     margin: 0;
-
     .name {
       font-weight:bold;
+      width: 15%;
+      text-align: left;
     }
-    .name, .email, .description {
+    .email, .description {
       width: 20%;
       text-align: left;
     }
@@ -61,11 +63,11 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      margin-right: 20px;
+      margin: 0;
       .courses {
         display: flex;
         flex-direction: column-reverse;
-        margin-right: 20px;
+        margin-right: 10px;
         .div_circle {
           width: 100%;
           display: flex;
@@ -80,6 +82,7 @@
             align-items: center;
             flex-direction: initial;
             margin: 0;
+            font-weight: bold;
             &.red {
               border: 2px solid #EF6F6C;
               color: #EF6F6C;
