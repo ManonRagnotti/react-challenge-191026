@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 import "firebase/auth";
 
 
-const firebaseConfig = {
+const config = {
   apiKey: "AIzaSyDnJuNxfAMxxqrL7jw6Z4qh1WTAzS24eG0",
   authDomain: "react-challenge-9e33c.firebaseapp.com",
   databaseURL: "https://react-challenge-9e33c.firebaseio.com",
@@ -12,4 +12,4 @@ const firebaseConfig = {
   appId: "1:494251381045:web:0fd143ba0a0f371c373c7c"
 };
 
-firebase.initializeApp(firebaseConfig)
+export default config;
