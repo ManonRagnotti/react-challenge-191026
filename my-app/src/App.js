@@ -23,6 +23,7 @@ function App() {
             <Link to="/addStudent" className="navbar-dark navbar-nav nav-link navbar-expand">Ajouter un étudiant</Link>
 
           <div className="connexion">
+
               <Link className="navbar-dark navbar-nav nav-link navbar-expand" to="/Register">Connexion</Link>
             </div>
 

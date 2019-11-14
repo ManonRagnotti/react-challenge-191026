@@ -22,8 +22,14 @@ export default class StudentInfos extends Component {
     }
   }
 
+  // handleChangeFirstname = (e) => {
+  //   this.state.studentInfo.firstname = e.target.value
+  // }
   handleChangeFirstname = (e) => {
-    this.state.studentInfo.firstname = e.target.value
+    const studentInfo = Object.assign( {}, this.state.studentInfo );
+    studentInfo.firstname = e.target.value;
+
+    this.setState( { studentInfo : studentInfo });
   }
 
   handleChangeLastname = (e) => {
@@ -66,7 +72,7 @@ export default class StudentInfos extends Component {
             },
             body: JSON.stringify(this.state.studentInfo)
         }).then(res => res.json())
-        .then(data => console.log(data));
+        .then(this.props.history.push("/students"));
   }
 
   render(){
