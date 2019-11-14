@@ -2,17 +2,11 @@ import React, { Component } from 'react';
 
 import { Form, Row, Col, Container, Button } from 'react-bootstrap';
 
-import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import firebaseConfig from '../../firebaseConfig';
+// import 'firebase/auth';
 
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const firebaseAppAuth = firebaseApp.auth();
-const providers = {
-  googleProvider: new firebase.auth.GoogleAuthProvider(),
-};
+
 
 
 class RegisterComponent extends Component {
