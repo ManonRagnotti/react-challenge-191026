@@ -2,10 +2,7 @@
   text-align: center;
   background: #EEF0F3;
   min-height: 100vh;
-}
-
-.App-logo {
-  height: 40vmin;
+  padding-bottom: 5%;
 }
 
 .App-header {
@@ -23,8 +20,26 @@
   color: #09d3ac;
 }
 
+.navbar {
+  padding: .5rem 2rem !important;
+  .navbar-nav {
+    align-items: center;
+    a {
+      font-weight: bold;
+    }
+  }
+}
+
 .connexion {
   position: absolute;
-  right: 1rem;
-
+  right: 2rem;
+  background-color: #45D492;
+  border-radius: 3px;
+  padding: 0 20px;
+  .nav-link {
+    color: #FFFFFF !important;
+    &:hover {
+      color: rgba(255,255,255,.5);
+    }
+  }
 }

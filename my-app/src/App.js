@@ -15,10 +15,14 @@ function App() {
     <Router>
         <Navbar bg="dark" variant="dark">
           <Nav className="mr-auto">
-          <Navbar.Brand href="/">HETIC</Navbar.Brand>
+            <Navbar.Brand href="/">
+              <img src={require('./assets/logo-hetic.png')}/>
+            </Navbar.Brand>
             <Link className="navbar-dark navbar-nav nav-link navbar-expand" to="/students">Etudiants</Link>
             <Link to="/addStudent" className="navbar-dark navbar-nav nav-link navbar-expand">Ajouter un étudiant</Link>
-            <Link className="navbar-dark navbar-nav nav-link navbar-expand connexion" to="/Register">Connexion</Link>
+          <div className="connexion">
+              <Link className="navbar-dark navbar-nav nav-link navbar-expand" to="/Register">Connexion</Link>
+            </div>
           </Nav>
         </Navbar>
         <Switch>
