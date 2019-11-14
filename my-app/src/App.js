@@ -20,7 +20,7 @@ function App() {
             </Navbar.Brand>
             <Link className="navbar-dark navbar-nav nav-link navbar-expand" to="/students">Etudiants</Link>
             <Link to="/addStudent" className="navbar-dark navbar-nav nav-link navbar-expand">Ajouter un étudiant</Link>
-          <div className="connexion">
+            <div className="connexion">
               <Link className="navbar-dark navbar-nav nav-link navbar-expand" to="/Register">Connexion</Link>
             </div>
           </Nav>
