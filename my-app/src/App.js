@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+
 import StudentList from './components/StudentList/StudentList';
 import Navigation from './components/Navigation/Navigation';
 import AddStudentComponent from './components/AddStudent/AddStudentComponent';
@@ -7,9 +9,6 @@ import RegisterComponent from './components/Register/RegisterComponent';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav} from 'react-bootstrap';
-import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-
-
 
 function App() {
   return (

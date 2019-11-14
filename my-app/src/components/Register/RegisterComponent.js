@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
+
 import { Form, Row, Col, Container, Button } from 'react-bootstrap';
-import * as firebase from 'firebase';
-import "firebase/auth";
 
-firebase.initializeApp({
-  apiKey: "AIzaSyDnJuNxfAMxxqrL7jw6Z4qh1WTAzS24eG0",
-  authDomain: "react-challenge-9e33c.firebaseapp.com",
-  databaseURL: "https://react-challenge-9e33c.firebaseio.com",
-  projectId: "react-challenge-9e33c",
-  storageBucket: "react-challenge-9e33c.appspot.com",
-  messagingSenderId: "494251381045",
-  appId: "1:494251381045:web:0fd143ba0a0f371c373c7c"
-});
+import withFirebaseAuth from 'react-with-firebase-auth'
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from '../../firebaseConfig';
 
-export default class RegisterComponent extends Component {
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const firebaseAppAuth = firebaseApp.auth();
+const providers = {
+  googleProvider: new firebase.auth.GoogleAuthProvider(),
+};
+
+
+class RegisterComponent extends Component {
   constructor(props){
     super();
     this.state = {
@@ -36,7 +38,6 @@ export default class RegisterComponent extends Component {
  
   
   onSubmit = (e) => {
-
     e.preventDefault();
     console.log(this.state.email);
     firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
@@ -53,7 +54,7 @@ export default class RegisterComponent extends Component {
     return (
       <div className="studentForm">
       <Container>
-        <Form>
+         <Form>
           <Row>
             <Col>
               <Form.Label>Email address</Form.Label>  
@@ -82,3 +83,4 @@ export default class RegisterComponent extends Component {
   }
 
 }
+export default RegisterComponent;
