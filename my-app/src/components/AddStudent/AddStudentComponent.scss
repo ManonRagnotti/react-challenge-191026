@@ -7,65 +7,55 @@
   margin: 0 auto;
 }
 
-.student {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 10%;
-}
-
-
-.name {
-  width: 20%;
-  text-align: left;
-}
-
-.email {
-  width: 20%;
-  text-align: left;
-}
-
-.description {
-  width: 20%;
-  text-align: left;
-}
-
-
-.note {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.note div {
-  display: flex;
-  flex-direction: column-reverse;
-  margin-right: 20px;
-}
-
-.red {
-  border: 1px solid #EF6F6C;
-}
-
-.yellow {
-  border: 1px solid #ECD070;
-}
-
-.blue {
-  border: 1px solid #487D92;
-}
-
-.mint {
-  border: 1px solid #70D3C1;
-}
-
-.purple {
-  border: 1px solid #BB77C0;
-}
-
-.circle {
-  border: 1px solid red;
-  border-radius: 100%;
-  height: 30px
+.studentForm {
+  form {
+    width: 90%;
+    margin: 0 auto;
+    .row {
+      margin: 40px 0 0 0;
+      input {
+        // width: 50%;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid black;
+      }
+      textarea {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid black;
+      }
+      .list-skills {
+        display: flex;
+        justify-content: space-between;
+        label {
+          font-weight: bold;
+          &.red {
+            color: #EF6F6C;
+          }
+          &.yellow {
+            color: #ECD070;
+          }
+          &.blue {
+            color: #487D92;
+          }
+          &.mint {
+            color: #70D3C1;
+          }
+          &.purple {
+            color: #BB77C0;
+          }
+        }
+      }
+    }
+    .btn {
+      background-color: #656D79;
+      border: none;
+      margin-top: 40px;
+      &:hover {
+        background-color: #45D492;
+      }
+    }
+  }
 }
