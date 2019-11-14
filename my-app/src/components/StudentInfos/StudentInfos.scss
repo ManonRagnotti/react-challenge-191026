@@ -1,0 +1,109 @@
+/*
+* Container
+**/
+.container {
+  margin: 5%;
+  padding: 3%;
+  background: #FFFFFF;
+}
+
+.list-header {
+  width: 95%;
+  margin: 0 auto;
+  &::after {
+    content: "";
+    width: 100%;
+    display: block;
+    height: 1px;
+    background-color: #D5D5D5;
+    margin: 0 auto;
+  }
+  h3 {
+    text-align: left;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 1.30rem;
+  }
+}
+
+/*
+* List of students
+**/
+.container_list {
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 20px;
+
+  &::after {
+    content: "";
+    width: 95% !important;
+    display: block;
+    height: 1px;
+    background-color: #D5D5D5;
+    margin: 0 auto;
+  }
+
+  .student {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    margin: 0;
+
+    .name {
+      font-weight:bold;
+    }
+    .name, .email, .description {
+      width: 20%;
+      text-align: left;
+    }
+    .note {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-right: 20px;
+      .courses {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-right: 20px;
+        .div_circle {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .circle {
+            border-radius: 100%;
+            height: 32px;
+            width: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: initial;
+            margin: 0;
+            &.red {
+              border: 2px solid #EF6F6C;
+              color: #EF6F6C;
+            }
+            &.yellow {
+              border: 2px solid #ECD070;
+              color: #ECD070;
+            }
+            &.blue {
+              border: 2px solid #487D92;
+              color: #487D92;
+            }
+            &.mint {
+              border: 2px solid #70D3C1;
+              color: #70D3C1;
+            }
+            &.purple {
+              border: 2px solid #BB77C0;
+              color: #BB77C0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
