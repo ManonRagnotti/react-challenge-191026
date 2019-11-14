@@ -2,45 +2,64 @@ import React, { Component } from 'react';
 
 import { Form, Row, Col, Container, Button } from 'react-bootstrap';
 
-import withFirebaseAuth from 'react-with-firebase-auth';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import firebaseConfig from '../../firebaseConfig';
-
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const firebaseAppAuth = firebaseApp.auth();
 
 
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
+// const firebaseAppAuth = firebaseApp.auth();
+// const providers = {
+//   googleProvider: new firebase.auth.GoogleAuthProvider(),
+// };
 
 class SignInComponent extends Component {
   constructor(props){
-    super();
+    super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      isLogin: this.props.isLogin
     }
   }
 
+  handleChangeEmail = (e) => {
+    this.setState({
+      email: e.target.value
+    })
+  }
 
+  handleChangePassword = (e) => {
+    this.setState({
+      password: e.target.value
+    })
+  }
+ 
+  loggedIn = () => {
+    this.props.onLoginChange(false)
+    this.props.history.push("/students")
+  }
+  
+  onSignIn = (e) => {
+    e.preventDefault();
+    console.log(this.state.email);
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+    .then(this.loggedIn)
+    .catch(function(error) {
+      // Handle Errors here.
+      console.log(error.message)
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
+  }
+
+  onSignUp = () => {
+    this.props.history.push("/Register")
+  }
 
   render(){
-    const {
-      user,
-      signOut,
-      signInWithGoogle,
-    } = this.props;
     return (
       <div className="studentForm">
-      {
-        user 
-          ? <p>Hello, {user.displayName}</p>
-          : <p>Please sign in.</p>
-      }
-      {
-        user
-          ? <button onClick={signOut}>Sign out</button>
-          : <button onClick={signInWithGoogle}>Sign in with Google</button>
-      }
       <Container>
          <Form>
           <Row>
@@ -61,8 +80,11 @@ class SignInComponent extends Component {
                 />
             </Col>
           </Row>
-          <Button variant="primary" type="submit" onClick={this.onSubmit}>
-            Submit
+          <Button variant="primary" type="submit" onClick={this.onSignIn}>
+            Sign In
+          </Button>
+          <Button variant="primary" type="submit" onClick={this.onSignUp}>
+            Register
           </Button>
         </Form>
       </Container>
@@ -71,7 +93,4 @@ class SignInComponent extends Component {
   }
 
 }
-export default withFirebaseAuth({
-
-  firebaseAppAuth,
-})(SignInComponent);
+export default SignInComponent;
