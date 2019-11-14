@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './AddStudentComponent.css';
+import './AddStudentComponent.scss';
 import { Form, Row, Col, Container, Button } from 'react-bootstrap';
 
 export default class StudentInfos extends Component {
@@ -50,7 +50,7 @@ export default class StudentInfos extends Component {
   handleChangeUi = (e) => {
     this.state.studentInfo.skills.ui = e.target.value
   }
-  
+
 
 
   onSubmit = (e) => {
@@ -67,7 +67,7 @@ export default class StudentInfos extends Component {
             body: JSON.stringify(this.state.studentInfo)
         }).then(res => res.json())
         .then(data => console.log(data));
-  } 
+  }
 
   render(){
     return (
@@ -77,14 +77,14 @@ export default class StudentInfos extends Component {
           <Row>
             <Col>
               <Form.Label >First Name</Form.Label>
-              <Form.Control 
+              <Form.Control
                 placeholder="First name"
                 onChange={this.handleChangeFirstname}
                 name={this.state.studentInfo.firstname}/>
             </Col>
             <Col>
               <Form.Label>Last Name</Form.Label>
-              <Form.Control 
+              <Form.Control
                 placeholder="Last name"
                 onChange={this.handleChangeLastname}
                 name={this.state.studentInfo.lastname} />
@@ -92,8 +92,8 @@ export default class StudentInfos extends Component {
           </Row>
           <Row>
             <Col>
-              <Form.Label>Email address</Form.Label>  
-              <Form.Control 
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
                 type="email"
                 placeholder="email"
                 onChange={this.handleChangeEmail}
@@ -102,8 +102,8 @@ export default class StudentInfos extends Component {
             <Col>
               <Form.Label>Description</Form.Label>
               <Form.Control
-                as="textarea" 
-                rows="3" 
+                as="textarea"
+                rows="3"
                 placeholder="Description"
                 onChange={this.handleChangeDesc}
                 name={this.state.studentInfo.desc} />
@@ -137,7 +137,7 @@ export default class StudentInfos extends Component {
               </Form.Control>
               <Form.Label>Gestion de Projet</Form.Label>
               <Form.Control
-              as="select" 
+              as="select"
               onChange={this.handleChangeProj}
               name={this.state.studentInfo.skills.project_mngmt}>
                 <option>Select</option>
