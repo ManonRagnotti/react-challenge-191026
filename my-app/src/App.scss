@@ -43,3 +43,17 @@
     }
   }
 }
+.deconnexion{
+  position: absolute;
+  right: 2rem;
+  background-color: #852931;
+  border-radius: 3px;
+  padding: 0 20px;
+  .nav-link {
+    color: #FFFFFF !important;
+    &:hover {
+      color: rgba(255,255,255,.5);
+    }
+  }
+}
+

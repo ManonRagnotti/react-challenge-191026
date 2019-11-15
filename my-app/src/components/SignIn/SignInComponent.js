@@ -20,6 +20,9 @@ class SignInComponent extends Component {
       password: "",
       isLogin: this.props.isLogin
     }
+    // this.onSignIn = this.onSignIn.bind(this);
+    // this.loggedIn = this.loggedIn.bind(this);
+
   }
 
   handleChangeEmail = (e) => {
@@ -54,7 +57,7 @@ class SignInComponent extends Component {
   }
 
   onSignUp = () => {
-    this.props.history.push("/Register")
+    this.context.history.push("/Register")
   }
 
   render(){
@@ -80,12 +83,18 @@ class SignInComponent extends Component {
                 />
             </Col>
           </Row>
-          <Button variant="primary" type="submit" onClick={this.onSignIn}>
-            Sign In
-          </Button>
-          <Button variant="primary" type="submit" onClick={this.onSignUp}>
-            Register
-          </Button>
+          <Row>
+            <Col>
+            <Button variant="primary" type="submit" onClick={this.onSignIn}>
+              Connexion
+            </Button>
+            </Col>
+            <Col>
+            <Button variant="primary" type="submit" onClick={this.onSignUp}>
+              Inscription
+            </Button>
+          </Col>
+          </Row>
         </Form>
       </Container>
       </div>

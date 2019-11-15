@@ -10,9 +10,6 @@ import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav} from 'react-bootstrap';
 
-// window.isLogin = true
-
-
 
 class App extends Component{
 
@@ -49,7 +46,7 @@ class App extends Component{
     <Link className="navbar-dark navbar-nav nav-link navbar-expand" to="/signIn">Connexion</Link>
   </div>
       } else {
-        isLogged =  <div className="connexion">
+        isLogged =  <div className="deconnexion">
         <Link className="navbar-dark navbar-nav nav-link navbar-expand" to="/signIn" onClick={this.signOut}>Déconnexion</Link>
       </div>
       }
