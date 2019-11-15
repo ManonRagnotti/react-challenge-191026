@@ -2,25 +2,25 @@
 Réaliser le prototype d'un site qui liste les étudiants bachelors par promotions. Les profils des étudiants doivent être éditables et stockés côté serveur. 
 
 
-#Technologie
+# Technologie
 
-##Front 
+## Front 
 - React
 - Javascript
 - Sass
 - React-bootstrap
 - React-router-dom
 
-##Back
+## Back
 - Firebase : real time data base
   - Firebase Authentification
   
   
-#UX/UI
+# UX/UI
 - Sketch
 
 
-#Membres
+# Membres
 
 - Eugénie Roques
 - Angeline Kapala 
